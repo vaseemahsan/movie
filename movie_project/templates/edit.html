@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link href="{% static 'form.css' %}" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}<br>
+       <a class="btn btn-warning" href="{% url 'movie_app:update' movie.id %}">Update</a>
+
+
+    </form>
+</div>
+
+
+{% endblock %}

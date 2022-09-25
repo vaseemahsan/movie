@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <h3>Add Movie</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Enter Movie Name *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="year" class="form-control" placeholder="Enter released date" value="" />
+                        </div>
+                      <div class="form-group">
+                            <input type="file" name="image" >
+                        </div>
+                        <div class="form-group">
+                         <input type="submit" class="btn btn-warning" value="ADD" ></input>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="Enter Movie description" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>
+<!--<form method="POST" enctype="multipart/form-data">-->
+
+<!--  <input type="text" name="name" placeholder="ENTER MOVIE NAME">-->
+<!--  <input type="text" name="description" placeholder="ENTER MOVIE DESCRIPTION">-->
+<!--  <input type="number" name="year" placeholder="ENTER YEAR RELEASED">-->
+<!--  -->
+<!--  <input type="submit">-->
+
+<!--</form>-->
+{% endblock %}
